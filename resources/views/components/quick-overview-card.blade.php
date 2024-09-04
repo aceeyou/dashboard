@@ -3,7 +3,7 @@
     <div class="flex quickoverview__top">
         {{-- icon --}}
         <div>
-            👋
+            {{$slot}}
         </div>
         <div>
             <select name="frequency" id="frequency">

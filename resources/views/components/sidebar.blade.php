@@ -23,7 +23,7 @@
                     {{-- <x-phosphor-check-circle-fill class="sidebar__link-icon sidebar__link-icon-active" /> --}}
                     Task</a></li>
                 <li class="sidebar__item"><a href="" class="flex sidebar__item-link">
-                    <x-phosphor-file-duotone class="sidebar__link-icon" />
+                    <x-untitledui-file-search-03 class="sidebar__link-icon" />
                     {{-- <x-phosphor-file-fill class="sidebar__link-icon sidebar__link-icon-active" /> --}}
                     Tracking</a></li>
                 <li class="sidebar__item"><a href="" class="flex sidebar__item-link">

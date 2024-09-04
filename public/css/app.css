@@ -47,6 +47,11 @@ a {
     text-decoration: none;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 .flex {
     display: flex;
     flex-direction: row;
@@ -74,16 +79,18 @@ a {
 }
 
 .main-view {
-    padding-top: 60px;
-    padding: var(--main-view-padding);
-    padding-right: 30px;
-
     .quick-overview {
         width: 100%;
+        padding-top: 60px;
+        padding: var(--main-view-padding);
+        padding-right: 30px;
+        padding-bottom: 30px;
+        border-bottom: var(--border-outline);
     }
 
     .greetings {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
+        font-weight: 600;
         color: var(--body-text-color);
     }
 
@@ -98,6 +105,76 @@ a {
         gap: 16px;
         margin-top: 18px;
         /* background-color: pink; */
+    }
+
+    .widgets__container {
+        width: 100%;
+        height: 100svh;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        background-color: #1a8c85;
+
+        background-color: var(--overview-bg);
+        padding-inline: calc(30px + var(--nav-col-1) + 2px) 30px;
+        padding-top: 25px;
+
+        h2 {
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: hsl(216, 16%, 47%);
+        }
+
+        .allwidgets__container {
+            justify-content: space-between;
+            flex-grow: 1;
+            /* border: var(--border-outline); */
+        }
+
+        .allwidgets__top {
+            justify-content: space-between;
+            button {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: hsl(216, 16%, 47%);
+                cursor: pointer;
+            }
+        }
+
+        .team-members__container {
+            width: 350px;
+            /* border: var(--border-outline); */
+        }
+
+        .allwidget__projects-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+
+            .project {
+                border: var(--border-outline);
+                border-radius: var(--rounded-card);
+                padding: 18px;
+            }
+
+            .urgency p {
+                color: hsl(346, 73%, 58%);
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            .project-title h3 {
+                font-size: 1.25rem;
+                margin-block: 15px 6px;
+                color: var(--body-text-color);
+            }
+
+            .team-members {
+                justify-content: space-between;
+            }
+        }
     }
 }
 
@@ -194,7 +271,9 @@ a {
             padding: 6px 8px;
             border-radius: var(--rounded-card);
             border: var(--border-outline);
+            border-width: 1px;
             border-color: transparent;
+            margin-bottom: 8px;
 
             &:hover {
                 border-color: var(--border-color);
@@ -204,6 +283,8 @@ a {
 
         .sidebar__item.active {
             border: var(--border-outline);
+            border-width: 1px;
+
             background-color: #f8fafc;
         }
 
@@ -314,20 +395,51 @@ a {
         margin-top: 5px;
         margin-bottom: 15px;
         justify-content: space-between;
+        align-items: flex-start;
 
         select {
             width: fit-content;
             border: none;
             outline: none;
+            font-size: 0.875rem;
         }
     }
 
     .quickoverview__metric {
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .quickoverview__metric-title {
         font-size: 0.875rem;
+    }
+
+    .quickoverview__card-icon {
+        width: 30px;
+        height: 30px;
+        aspect-ratio: 1 / 1;
+        padding: 6px;
+        border-radius: 50%;
+        /* background-color: aquamarine; */
+
+        &.total-project {
+            color: hsl(32, 95%, 58%);
+            background-color: hsla(32, 95%, 58%, 0.095);
+        }
+
+        &.running-project {
+            color: hsl(176, 100%, 24%);
+            background-color: hsla(176, 100%, 24%, 0.095);
+        }
+
+        &.onhold-project {
+            color: hsl(214, 25%, 27%);
+            background-color: hsl(214, 25%, 27%, 0.095);
+        }
+
+        &.incoming-project {
+            color: hsl(207, 100%, 51%);
+            background-color: hsl(207, 100%, 51%, 0.095);
+        }
     }
 }
