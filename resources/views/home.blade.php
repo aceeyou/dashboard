@@ -31,7 +31,7 @@
             {{-- all widgets --}}
             <div class="allwidgets__container">
                 <div class="flex allwidgets__top">
-                    <h2>Projects with high urgency</h2>
+                    <h2 class="h2">Projects with high urgency</h2>
                     <button>See all</button>
                 </div>
                 <div class="allwidget__projects-container">
@@ -76,7 +76,29 @@
             {{-- users widget --}}
             <div class="team-members__container">
                 <div class="flex team-members__top">
-                    <h2>Available team member</h2>
+                    <h2 class="h2">Available team member</h2>
+                </div>
+                <div class="team-members__members-container card">
+                    <div class="team-members__searchbar card">
+                        <form class="flex" action="">
+                            @csrf
+                            <x-feathericon-search class="nav-icon search-icon" />
+                            <label for="searchbar" class="sr-only">Searchbar</label>
+                            <input type="text" id="searchbar" name="searchbar" placeholder="Search a person">
+                        </form>
+                    </div>
+                    <div class="team-members__search-results-container">
+                        <h3 class="team-members__h3">Results</h3>
+                        <x-user-card name="Ace Logronio" type="search-result" />
+                    </div>
+                    <div class="team-members__recommendations-container">
+                        <h3 class="team-members__h3">Recommendations</h3>
+                        <x-user-card name="Ace Logronio" type="recommendations" />
+                        <x-user-card name="Ace Logronio" type="recommendations" />
+                        <x-user-card name="Ace Logronio" type="recommendations" />
+                        <x-user-card name="Ace Logronio" type="recommendations" />
+                        <x-user-card name="Ace Logronio" type="recommendations" />
+                    </div>
                 </div>
             </div>
         </div>

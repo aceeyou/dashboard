@@ -1,5 +1,4 @@
-<div class="user-card-component">
-    <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
+<div class="user-card-component {{$type === 'recommendations' || $type === 'search-result' ? 'border-bottom' : ''}}">
     <div class="user-card__image-container">
         <img class="user-card__image" src="https://picsum.photos/200" alt="laksdjlkajd">
     </div>
@@ -13,9 +12,11 @@
     </div>
     <div class="user-card__action-btn-container">
         @if ($type === 'profile')
+        <a href="{{route("login")}}">
             <button class="flex user-card__action-btn">
                 <x-pepicon-leave class="user-card__action-btn-icon" />
             </button>
+        </a>
         @else
             <button class="flex user-card__action-btn">
                 <x-iconic-plus class="user-card__action-btn-icon" />

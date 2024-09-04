@@ -1,0 +1,100 @@
+#login__container,
+#register__container {
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+
+    .login__container-left {
+        position: relative;
+        width: min(calc(100% - 40px), 650px);
+        height: 100%;
+        padding: 10px 25px;
+
+        #login__header,
+        #register__header {
+            position: absolute;
+            top: 12px;
+            left: 25px;
+            right: 25px;
+            justify-content: space-between;
+        }
+
+        .login__form {
+            width: 100%;
+            margin-block: auto;
+            margin-inline: 40px;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .sub-heading {
+                font-size: 0.875rem;
+            }
+
+            .login__form-wrapper {
+                align-self: center;
+
+                form {
+                    flex-direction: column;
+                    row-gap: 13px;
+                    flex: 1;
+                    margin-top: 25px;
+                }
+
+                input {
+                    width: 100%;
+                    flex: 1;
+                    padding: 8px 10px;
+                    font-size: 0.875rem;
+                    border-radius: var(--input-btn-rounded);
+
+                    &:focus {
+                        outline: 2px solid var(--primary);
+                    }
+                }
+                input:not(:last-child) {
+                    border: var(--border-outline);
+                }
+
+                input[type="submit"] {
+                    border: none;
+                    background-color: var(--primary);
+                    color: var(--text-white);
+                    font-size: 1.0125rem;
+                    font-weight: 600;
+                    padding-block: 10px;
+                }
+            }
+        }
+    }
+
+    #login__container-right {
+        width: 100%;
+        height: 100%;
+        background-color: #f4f4f4;
+        padding: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            padding: 0;
+        }
+    }
+}
+
+.login__with {
+    width: 100%;
+    display: block;
+    padding: 8px;
+    border-radius: var(--input-btn-rounded);
+    margin-bottom: 12px;
+    span {
+        margin-left: 8px;
+    }
+    .login__with-inner-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
