@@ -6,7 +6,7 @@
     <div>
         @include('components.navbar')
         @include('components.sidebar')
-        <div>
+        <div class="main-container">
             <h1>Notifications</h1>
         </div>
     </div>

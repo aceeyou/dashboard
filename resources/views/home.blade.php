@@ -8,8 +8,13 @@
     <main class="main-view">
 
         <div class="quick-overview">
-            <h1 class="greetings">Hello Ace! 👋</h1>
-            <p class="sub-greeting">We're hoping you're having a great night.</p>
+            @auth
+            <h1 class="greetings">Hello 
+                   
+                {{Auth::user()->name}}
+                👋</h1>
+                @endauth
+                <p class="sub-greeting">We're hoping you're having a great night.</p>
             <div class="quickoverview__cards-container">
                 <x-quick-overview-card :metric="12" metric-title="Total Projects">
                     <x-phosphor-folders-fill class="quickoverview__card-icon total-project" />
@@ -72,6 +77,7 @@
                         </div>
                     </div>
                 </div>
+                @include("components.footer")
             </div>
             {{-- users widget --}}
             <div class="team-members__container">

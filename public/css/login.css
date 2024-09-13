@@ -1,5 +1,4 @@
-#login__container,
-#register__container {
+#login__container {
     width: 100svw;
     height: 100svh;
     overflow: hidden;
@@ -8,7 +7,7 @@
         position: relative;
         width: min(calc(100% - 40px), 650px);
         height: 100%;
-        padding: 10px 25px;
+        padding-inline: auto;
 
         #login__header,
         #register__header {
@@ -19,10 +18,15 @@
             justify-content: space-between;
         }
 
+        .login__register-link {
+            color: var(--primary);
+            font-size: 0.875rem;
+        }
+
         .login__form {
             width: 100%;
             margin-block: auto;
-            margin-inline: 40px;
+            margin-inline: 33px;
 
             h1 {
                 font-size: 2rem;
@@ -64,6 +68,37 @@
                     font-size: 1.0125rem;
                     font-weight: 600;
                     padding-block: 10px;
+                    cursor: pointer;
+                    transition: transform 500ms;
+                    &:hover {
+                        transform: scale(1.015);
+                    }
+                    &:focus {
+                        outline-color: var(--body-text-color);
+                    }
+                }
+
+                .password-input__container {
+                    width: 100%;
+                    padding-right: 12px;
+                    border: var(--border-outline);
+                    border-radius: var(--input-btn-rounded);
+
+                    &:has(input:focus) {
+                        outline: 2px solid var(--primary);
+                    }
+                    input {
+                        border: none;
+                        border-radius: 0;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    button:focus {
+                        outline: 2px solid var(--primary) !important;
+                    }
                 }
             }
         }
@@ -92,6 +127,7 @@
     margin-bottom: 12px;
     span {
         margin-left: 8px;
+        color: var(--body-text-color);
     }
     .login__with-inner-wrapper {
         width: 100%;

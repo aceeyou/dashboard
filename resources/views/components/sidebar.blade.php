@@ -18,32 +18,47 @@
                         @endif
                         Dashboard
                     </a></li>
-                <li @class(['sidebar__item', 'active' => Route::is('projects')])><a href="{{ route('projects') }}" class="flex sidebar__item-link">
-                    @if (Route::is("projects"))
-                        <x-phosphor-folder-fill class="sidebar__link-icon sidebar__link-icon-active" />
-                    @else
-                        <x-phosphor-folder class="sidebar__link-icon" />
-                    @endif
-                        Project</a></li>
-                <li @class(['sidebar__item', 'active' => Route::is('dashboard')])><a href="{{ route('dashboard') }}" class="flex sidebar__item-link">
-                        <x-phosphor-check-circle class="sidebar__link-icon" />
-                        {{-- <x-phosphor-check-circle-fill class="sidebar__link-icon sidebar__link-icon-active" /> --}}
-                        Task</a></li>
-                <li @class(['sidebar__item', 'active' => Route::is('dashboard')])><a href="" class="flex sidebar__item-link">
-                        <x-untitledui-file-search-03 class="sidebar__link-icon" />
-                        {{-- <x-phosphor-file-fill class="sidebar__link-icon sidebar__link-icon-active" /> --}}
-                        Tracking</a></li>
-                <li @class(['sidebar__item', 'active' => Route::is('dashboard')])><a href="" class="flex sidebar__item-link">
-                        <x-phosphor-calendar-blank class="sidebar__link-icon" />
-                        {{-- <x-phosphor-calendar-blank-fill class="sidebar__link-icon sidebar__link-icon-active" /> --}}
-                        Calendar</a></li>
-                <li @class(['sidebar__item', 'active' => Route::is('notification.show')])><a href="{{route("notification.show")}}" class="flex sidebar__item-link">
-                    @if (Route::is("notification.show"))
-                        <x-phosphor-bell-fill class="sidebar__link-icon sidebar__link-icon-active" />
-                    @else
-                        <x-phosphor-bell class="sidebar__link-icon" />
-                    @endif
-                        Notifications</a></li>
+                <li @class(['sidebar__item', 'active' => Route::is('projects.show')])><a href="{{ route('projects.show') }}" class="flex sidebar__item-link">
+                        @if (Route::is('projects.show'))
+                            <x-phosphor-folder-fill class="sidebar__link-icon sidebar__link-icon-active" />
+                        @else
+                            <x-phosphor-folder class="sidebar__link-icon" />
+                        @endif
+                        Project
+                    </a></li>
+                <li @class(['sidebar__item', 'active' => Route::is('tasks.show')])><a href="{{ route('tasks.show') }}" class="flex sidebar__item-link">
+                        @if (Route::is('tasks.show'))
+                            <x-phosphor-check-circle-fill class="sidebar__link-icon sidebar__link-icon-active" />
+                        @else
+                            <x-phosphor-check-circle class="sidebar__link-icon" />
+                        @endif
+                        Task
+                    </a></li>
+                <li @class(['sidebar__item', 'active' => Route::is('tracking.show')])><a href="{{ route('tracking.show') }}" class="flex sidebar__item-link">
+                        @if (Route::is('tracking.show'))
+                            <x-phosphor-file-fill class="sidebar__link-icon sidebar__link-icon-active" />
+                        @else
+                            <x-untitledui-file-search-03 class="sidebar__link-icon" />
+                        @endif
+                        Tracking
+                    </a></li>
+                <li @class(['sidebar__item', 'active' => Route::is('calendar.show')])><a href="{{ route('calendar.show') }}" class="flex sidebar__item-link">
+                        @if (Route::is('calendar.show'))
+                            <x-phosphor-calendar-blank-fill class="sidebar__link-icon sidebar__link-icon-active" />
+                        @else
+                            <x-phosphor-calendar-blank class="sidebar__link-icon" />
+                        @endif
+                        Calendar
+                    </a></li>
+                <li @class(['sidebar__item', 'active' => Route::is('notifications.show')])><a href="{{ route('notifications.show') }}"
+                        class="flex sidebar__item-link">
+                        @if (Route::is('notifications.show'))
+                            <x-phosphor-bell-fill class="sidebar__link-icon sidebar__link-icon-active" />
+                        @else
+                            <x-phosphor-bell class="sidebar__link-icon" />
+                        @endif
+                        Notifications
+                    </a></li>
             </ul>
         </section>
         <section>
@@ -58,7 +73,7 @@
             </ul>
         </section>
         <div class="user-card-section">
-            <x-user-card name="Ace Logronio" type="profile" />
+            <x-user-card name="{{Auth::user()->name}}" type="profile" />
         </div>
     </nav>
 </aside>
