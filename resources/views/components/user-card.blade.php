@@ -1,7 +1,7 @@
 <div class="user-card-component {{$type === 'recommendations' || $type === 'search-result' ? 'border-bottom' : ''}}">
     <a href="{{route("profile")}}">
         <div class="user-card__image-container">
-            <img class="user-card__image" src="https://picsum.photos/200" alt="laksdjlkajd">
+            <img class="user-card__image" src="{{Auth::user()->getImageUrl()}}" alt="laksdjlkajd">
         </div>
     </a>
     <a href="{{route("profile")}}">

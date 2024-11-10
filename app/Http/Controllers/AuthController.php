@@ -54,7 +54,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return redirect()->route("dashboard")->withErrors("username", "User with the username does not exists.");
+        return redirect()->route("login")->withError("Incorrect username or password");
     }
 
     public function logout(){

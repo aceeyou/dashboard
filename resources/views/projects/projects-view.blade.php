@@ -6,6 +6,6 @@
     @include('components.navbar')
     @include('components.sidebar')
     <div class="main-container">
-        <h1>Projects</h1>
+        @include('projects.projects-form')
     </div>
 @endsection

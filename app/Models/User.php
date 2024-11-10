@@ -24,4 +24,12 @@ class User extends Authenticatable
     protected $hidden = [
         "password", "remember_token"
     ];
+
+    public function getImageURL(){
+        if($this->image){
+            return url('storage/', $this->image);
+        }
+
+        return "https://images.pexels.com/photos/8834489/pexels-photo-8834489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+    }
 }

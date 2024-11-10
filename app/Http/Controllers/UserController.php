@@ -62,6 +62,6 @@ class UserController extends Controller
         // }
 
         $user->update($validated);
-        return redirect()->route('profile', compact('user'));
+        return redirect()->route('profile');
     }
 }

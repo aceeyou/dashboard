@@ -25,4 +25,5 @@
     </div>
     {{-- footer here --}}
     {{-- @bukScripts --}}
+    <script src="{{ asset('js/app.js') }}"></script> 
 </body>

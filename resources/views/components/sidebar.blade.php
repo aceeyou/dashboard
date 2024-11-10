@@ -1,4 +1,4 @@
-{{-- 
+divdiv{{-- 
         SIDEBAR
 --}}
 
@@ -72,8 +72,10 @@
                             class="sidebar__link-icon" />Page-inator</a></li>
             </ul>
         </section>
-        <div class="user-card-section">
-            <x-user-card name="{{Auth::user()->name}}" type="profile" />
-        </div>
+        @if (!Route::is('profile'))
+            <div class="user-card-section">
+                <x-user-card name="{{ Auth::user()->name }}" type="profile" />
+            </div>
+        @endif
     </nav>
 </aside>

@@ -1,0 +1,59 @@
+#projects-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 700px;
+    margin-top: 30px;
+}
+
+#projects-form__form {
+    label {
+        font-size: 0.9rem;
+    }
+
+    input,
+    .select {
+        padding: 6px 12px;
+        border: var(--border-outline);
+        border-radius: 5px;
+        margin-top: 2px;
+        &:focus {
+            outline-color: var(--primary);
+        }
+
+        &:has(select:focus) {
+            outline: 2px solid var(--primary);
+        }
+
+        position: relative;
+    }
+
+    select {
+        border: none;
+        outline: none;
+    }
+
+    option {
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+}
+
+.input-row,
+.input-grp {
+    display: flex;
+    /* align-items: center; */
+}
+.input-row {
+    gap: 0.75rem;
+    flex-direction: row;
+
+    .input-grp:first-child {
+        flex: 1;
+    }
+}
+
+.input-grp {
+    flex-direction: column;
+}
